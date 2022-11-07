@@ -1,3 +1,6 @@
+[![DOI](https://zenodo.org/badge/562717209.svg)](https://zenodo.org/badge/latestdoi/562717209)
+[![View Venn diagram on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/120118-venn-diagram)
+
 # venn: A simple MATLAB function to draw Venn diagram of two to four sets with optional labels
 
 User can specify the number of sets to draw (maximum four) and label each set and the intersectional regions between sets.
@@ -83,3 +86,6 @@ venn(4,sets=mysets,labels=mylabels,colors=c,alpha=0.5,edgeC=[1 1 1],edgeW=3);
 ## License
 
 This project is licensed under [GNU General Public License v3.0.](LICENSE)
+
+## Cite As
+Wong, M. H. (2022). venn: A simple MATLAB function to draw Venn diagram of two to four sets with optional labels. (1.0.0). Zenodo. https://doi.org/10.5281/zenodo.7297812
