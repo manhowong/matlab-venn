@@ -80,7 +80,6 @@ venn(4,sets=mysets,labels=mylabels,colors=c,alpha=0.5,edgeC=[1 1 1],edgeW=3);
 ```
 ![4sets](resources/4sets.png)
 
-License
+## License
 
-This project is licensed under GNU General Public License v3.0.
-
+This project is licensed under [GNU General Public License v3.0.](LICENSE)
