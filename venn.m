@@ -106,7 +106,7 @@ BCD = v(14);
 ABCD = v(15);
 
 % figure settings
-vennfig = figure(Position=[20 20 800 450],Color='w');
+vennfig = figure('Position',[20 20 800 450],'Color','w');
 axis off
 daspect([1,1,1])
 
@@ -125,12 +125,12 @@ switch n
         % draw circle A edge again (so it's not covered by circle B)
         circle(X,Y,r,[0 0 0],0);        
 
-        text(1,2.2,s(1), HorizontalAlignment='right');
-        text(2,2.2,s(2), HorizontalAlignment='left');
+        text(1,2.2,s(1),'HorizontalAlignment','right');
+        text(2,2.2,s(2),'HorizontalAlignment','left');
 
-        text(0.5,1,A, HorizontalAlignment='center')
-        text(2.5,1,B, HorizontalAlignment='center')
-        text(1.5,1,AB, HorizontalAlignment='center')
+        text(0.5,1,A,'HorizontalAlignment','center')
+        text(2.5,1,B,'HorizontalAlignment','center')
+        text(1.5,1,AB,'HorizontalAlignment','center')
 
     case 3
         xlim([-0.5 4])
@@ -141,74 +141,74 @@ switch n
         circle(X,Y,r,[0 0 0],0);
         circle(X+r,Y,r,[0 0 0],0);
 
-        text(1.5,3.2,s(1), HorizontalAlignment='center')
-        text(-0.1,1,s(2), HorizontalAlignment='right')
-        text(3.1,1,s(3), HorizontalAlignment='left')
+        text(1.5,3.2,s(1),'HorizontalAlignment','center')
+        text(-0.1,1,s(2),'HorizontalAlignment','right')
+        text(3.1,1,s(3),'HorizontalAlignment','left')
 
-        text(1.5,2.4,A, HorizontalAlignment='center')
-        text(0.5,1,B, HorizontalAlignment='center')
-        text(2.5,1,C, HorizontalAlignment='center')
+        text(1.5,2.4,A,'HorizontalAlignment','center')
+        text(0.5,1,B,'HorizontalAlignment','center')
+        text(2.5,1,C,'HorizontalAlignment','center')
 
-        text(1,1.75,AB, HorizontalAlignment='center')
-        text(1.5,0.75,BC, HorizontalAlignment='center')
-        text(2,1.75,AC, HorizontalAlignment='center')
+        text(1,1.75,AB,'HorizontalAlignment','center')
+        text(1.5,0.75,BC,'HorizontalAlignment','center')
+        text(2,1.75,AC,'HorizontalAlignment','center')
         
-        text(1.5,1.4,ABC, HorizontalAlignment='center')
+        text(1.5,1.4,ABC,'HorizontalAlignment','center')
 
     case 4        
         xlim([-3.5 4])
 
         % ellipse A and B
         [X,Y] = getEllipse(0.8,1.6,[-1.1 1]);
-        patch(X,Y,colors(1,:),FaceAlpha=alpha,LineStyle='none');
-        patch(X+1,Y+0.5,colors(2,:),FaceAlpha=alpha,LineStyle='none');
+        patch(X,Y,colors(1,:),'FaceAlpha',alpha,'LineStyle','none');
+        patch(X+1,Y+0.5,colors(2,:),'FaceAlpha',alpha,'LineStyle','none');
 
         % ellipse C and D
         [X,Y] = getEllipse(1.6,0.8,[1.1 1]);
-        patch(X-1,Y+0.5,colors(3,:),FaceAlpha=alpha,LineStyle='none');
-        patch(X,Y,colors(4,:),FaceAlpha=alpha,LineStyle='none');
+        patch(X-1,Y+0.5,colors(3,:),'FaceAlpha',alpha,'LineStyle','none');
+        patch(X,Y,colors(4,:),'FaceAlpha',alpha,'LineStyle','none');
         
         % draw ellipse edges separately (so they are not covered by others)
-        patch(X-1,Y+0.5,'w',FaceAlpha=0,LineStyle='none');  % ellipse C
-        patch(X,Y,'w',FaceAlpha=0,LineStyle='none');  % ellipse D
+        patch(X-1,Y+0.5,'w','FaceAlpha',0,'LineStyle','none');  % ellipse C
+        patch(X,Y,'w','FaceAlpha',0,'LineStyle','none');  % ellipse D
         [X,Y] = getEllipse(0.8,1.6,[-1.1 1]);
-        patch(X,Y,'w',FaceAlpha=0,LineStyle='none');  % ellipse A
-        patch(X+1,Y+0.5,'w',FaceAlpha=0,LineStyle='none');  % ellipse B
+        patch(X,Y,'w','FaceAlpha',0,'LineStyle','none');  % ellipse A
+        patch(X+1,Y+0.5,'w','FaceAlpha',0,'LineStyle','none');  % ellipse B
 
-        text(-3,3,s(1), HorizontalAlignment='right')
-        text(-2,3.5,s(2), HorizontalAlignment='right')
-        text(2,3.5,s(3), HorizontalAlignment='left')
-        text(3,3,s(4), HorizontalAlignment='left')
+        text(-3,3,s(1),'HorizontalAlignment','right')
+        text(-2,3.5,s(2),'HorizontalAlignment','right')
+        text(2,3.5,s(3),'HorizontalAlignment','left')
+        text(3,3,s(4),'HorizontalAlignment','left')
         
-        text(-2,1.5,A, HorizontalAlignment='center')
-        text(2,1.5,D, HorizontalAlignment='center')
-        text(-1,2.75,B, HorizontalAlignment='center')
-        text(1,2.75,C, HorizontalAlignment='center')
+        text(-2,1.5,A,'HorizontalAlignment','center')
+        text(2,1.5,D,'HorizontalAlignment','center')
+        text(-1,2.75,B,'HorizontalAlignment','center')
+        text(1,2.75,C,'HorizontalAlignment','center')
         
         
-        text(-1.4,2.25,AB, HorizontalAlignment='center')
-        text(1.4,2.25,CD, HorizontalAlignment='center')
-        text(0,2.25,BC, HorizontalAlignment='center')
-        text(-1.25,0.5,AC, HorizontalAlignment='center')
-        text(1.25,0.5,BD, HorizontalAlignment='center')
-        text(0,-0.4,AD, HorizontalAlignment='center')
+        text(-1.4,2.25,AB,'HorizontalAlignment','center')
+        text(1.4,2.25,CD,'HorizontalAlignment','center')
+        text(0,2.25,BC,'HorizontalAlignment','center')
+        text(-1.25,0.5,AC,'HorizontalAlignment','center')
+        text(1.25,0.5,BD,'HorizontalAlignment','center')
+        text(0,-0.4,AD,'HorizontalAlignment','center')
         
-        text(-0.75,1.5,ABC, HorizontalAlignment='center')
-        text(0.75,1.5,BCD, HorizontalAlignment='center')
-        text(-0.4,0.05,ACD, HorizontalAlignment='center')
-        text(0.4,0.05,ABD, HorizontalAlignment='center')
+        text(-0.75,1.5,ABC,'HorizontalAlignment','center')
+        text(0.75,1.5,BCD,'HorizontalAlignment','center')
+        text(-0.4,0.05,ACD,'HorizontalAlignment','center')
+        text(0.4,0.05,ABD,'HorizontalAlignment','center')
         
-        text(0,0.5,ABCD, HorizontalAlignment='center')
+        text(0,0.5,ABCD,'HorizontalAlignment','center')
         
     otherwise
         disp('n must be an integer between 2 and 4.')
 end
 
 % Get all text objects
-h=vennfig.findobj(Type='text');
+h=vennfig.findobj('Type','text');
 
 % Configure texts
-set(h,fontsize=11,FontWeight='bold');
+set(h,'fontsize',11,'FontWeight','bold');
 for i = 1:length(h)
     if ismember(h(i).String,sets)
         h(i).FontSize = 14;
@@ -224,11 +224,11 @@ if n > 3
 else
     obj = 'rectangle';
 end
-h=vennfig.findobj(Type=obj);
-set(h,EdgeColor=edgeC);
+h=vennfig.findobj('Type',obj);
+set(h,'EdgeColor',edgeC);
 if ~isempty(edgeW)
-    set(h,LineStyle='-');
-    set(h,LineWidth=edgeW);
+    set(h,'LineStyle','-');
+    set(h,'LineWidth',edgeW);
 end
 
 %%
@@ -246,7 +246,7 @@ x = cX-r;
 y = cY-r;
 d = 2*r;
 fC = [faceC alpha];
-rectangle(Position=[x y d d],Curvature=1,FaceColor=fC,LineStyle='none');
+rectangle('Position',[x y d d],'Curvature',1,'FaceColor',fC,'LineStyle','none');
 end
 
 end
