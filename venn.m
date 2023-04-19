@@ -10,11 +10,15 @@ function vennfig = venn(n,varargin)
 %              An array of set names in left-to-right order
 %         labels [string | char | cellstr | numeric]
 %                An array of label names for labeling each section;
-%                For Set A, B, C and D, there are 15 sections: A, B, C, D,
-%                A&B, A&C, A&D, B&C, B&D, C&D, A&B&C, A&B&D, A&C&D, B&C&D,
-%                A&B&C&D. Elements in 'labels' must follow the above order,
-%                e.g. for Set A and B, the label order should be A, B,
-%                A&B; Any extra labels will be ignored.
+%                Elements in the array must follow the following order: 
+%                For diagram with Set A and B, labels for 3 sections are
+%                A, B and A&B.
+%                For diagram with Set A, B and C, labels for 7 sections are
+%                A, B, C, D, A&B, A&C, B&C and A&B&C.                 
+%                For diagram with Set A, B, C and D, labels for 15 sections
+%                are A, B, C, D, A&B, A&C, A&D, B&C, B&D, C&D, A&B&C, A&B&D 
+%                , A&C&D, B&C&D, A&B&C&D.
+%                Any extra labels will be ignored.
 %         colors [rows of RGB triplet]
 %                Color map for fill colors in left-to-right order.
 %                e.g. [1 0 0; 0 1 0; 0 0 1] represents red, green, blue;
@@ -86,24 +90,39 @@ for i = 1:vRange
 end
 
 % for code readability, assign v to variables named by letters
-A = v(1);
-B = v(2);
-C = v(3);
-D = v(4);
-
-AB = v(5);
-AC = v(6);
-AD = v(7);
-BC = v(8);
-BD = v(9);
-CD = v(10);
-
-ABC = v(11);
-ABD = v(12);
-ACD = v(13);
-BCD = v(14);
-
-ABCD = v(15);
+switch n
+    case 2
+        A = v(1);
+        B = v(2);
+        AB = v(3);
+    case 3
+        A = v(1);
+        B = v(2);
+        C = v(3);
+        AB = v(4);
+        AC = v(5);
+        BC = v(6);
+        ABC = v(7);
+    case 4
+        A = v(1);
+        B = v(2);
+        C = v(3);
+        D = v(4);
+        
+        AB = v(5);
+        AC = v(6);
+        AD = v(7);
+        BC = v(8);
+        BD = v(9);
+        CD = v(10);
+        
+        ABC = v(11);
+        ABD = v(12);
+        ACD = v(13);
+        BCD = v(14);
+        
+        ABCD = v(15);
+end
 
 % figure settings
 vennfig = figure('Position',[20 20 800 450],'Color','w');
