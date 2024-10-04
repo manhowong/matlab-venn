@@ -1,6 +1,9 @@
 [![DOI](https://zenodo.org/badge/562717209.svg)](https://zenodo.org/badge/latestdoi/562717209)
 [![View Venn diagram on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/120118-venn-diagram)
 
+> Update 2024-10-04: Farid Zare ([farid-zare](https://github.com/farid-zare)) added new font size option; fixed color issue due to MATLAB verson update.
+> To set font size, include the input argument `'fontSize'`.
+
 # venn: A simple MATLAB function to draw Venn diagram of two to four sets with optional labels
 
 User can specify the number of sets to draw (maximum four) and label each set and the intersectional regions between sets.
