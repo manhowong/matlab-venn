@@ -17,6 +17,8 @@ Requirement: MATLAB R2007a or above.
 User can download the file `venn.m` in this repository directly or install the function via MATLAB's Add-On Explorer.
 
 ## Usage
+
+```
 Usage : vennfig = plotVenn(n,varargin) 
 
 Input : n [positive integer]
