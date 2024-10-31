@@ -1,28 +1,32 @@
-function vennfig = venn(n,varargin)
-%% Draw venn diagram with two to four sets with optional text labels.
+function vennfig = plotVenn(n,varargin)
+%% Draw a Venn diagram with two to four sets with optional text labels.
 % User can specify the number of sets to draw (maximum four) and label each
 % set and the intersectional regions between sets.
 % Man Ho Wong (2022).
 %
+% Usage : vennfig = plotVenn(n,varargin) 
+%
 % Input : n [positive integer]
 %           Number of sets to draw
+%
+% Optional Inputs:
 %         sets [string | char | cellstr | numeric]
 %              An array of set names in left-to-right order
 %         labels [string | char | cellstr | numeric]
 %                An array of label names for labeling each section;
 %                Elements in the array must follow the following order:
-%                For diagram with Set A and B, labels for 3 sections are
-%                A, B and A&B.
-%                For diagram with Set A, B and C, labels for 7 sections are
+%                For a diagram with Set A and B, labels for 3 sections are
+%                A, B, and A&B.
+%                For a diagram with Set A, B, and C, labels for 7 sections are
 %                A, B, C, A&B, A&C, B&C and A&B&C.
-%                For diagram with Set A, B, C and D, labels for 15 sections
+%                For a diagram with Set A, B, C, and D, labels for 15 sections
 %                are A, B, C, D, A&B, A&C, A&D, B&C, B&D, C&D, A&B&C, A&B&D
 %                , A&C&D, B&C&D, A&B&C&D.
 %                Any extra labels will be ignored.
 %         colors [rows of RGB triplet]
 %                Color map for fill colors in left-to-right order.
 %                e.g. [1 0 0; 0 1 0; 0 0 1] represents red, green, blue;
-%                If number of colors is less than n, colors will be
+%                If the number of colors is less than n, colors will be
 %                repeated.
 %         alpha [0 to 1]
 %               Fill color alpha; 0 = fully transparent.
@@ -35,7 +39,7 @@ function vennfig = venn(n,varargin)
 %         fontSize [positive number]
 %                Font size for the text (default is adjusted based on number of sets).
 %
-% Output : A Veenn diagram will be drawn on a new figure.
+% Output : A Venn diagram will be drawn on a new figure.
 %          vennfig (optional): A handle to the figure.
 %
 % Examples: see README.md
